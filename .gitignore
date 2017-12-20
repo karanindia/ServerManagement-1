@@ -1,7 +1,6 @@
 *.asv
 *.mat
 *.pyc
-*.txt
 !*result.txt
 ~*
 *.pkl

@@ -1,9 +1,9 @@
 __author__ = 'JunSong<songjun54cm@gmail.com>'
-import argparse, base64, paramiko
+import argparse, base64, demo_paramiko
 
 def main(config):
-    client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client = demo_paramiko.SSHClient()
+    client.set_missing_host_key_policy(demo_paramiko.AutoAddPolicy())
     client.connect('10.214.155.238', username='songjun', password='songjun1234')
     stdin, stdout, stderr = client.exec_command('ls')
     print(stdout.readlines())
@@ -21,9 +21,9 @@ if __name__ == "__main__":
     main(config)
 
 
-import paramiko
-client = paramiko.SSHClient()
-client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+import demo_paramiko
+client = demo_paramiko.SSHClient()
+client.set_missing_host_key_policy(demo_paramiko.AutoAddPolicy())
 client.connect('10.15.82.182', username='udms', key_filename='/export/home/udms/.ssh/id_rsa')
 stdin, stdout, stderr = client.exec_command('ls /home')
 print(stdout.readlines())
